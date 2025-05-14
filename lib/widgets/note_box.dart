@@ -6,7 +6,7 @@ class NoteBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6),
       child: Container(
         decoration: BoxDecoration(
             color: const Color.fromARGB(255, 255, 181, 206),

@@ -22,32 +22,37 @@ class EditNoteView extends StatelessWidget {
             child: IconButton(
                 onPressed: () {},
                 icon: Icon(
-                  Icons.edit,
+                  Icons.done_outline_rounded,
                   size: 24,
                 )),
           )
         ],
       ),
-      body: ListView(
- children: [
-          SizedBox(
-            height: 18,
-          ),
-          CustomTextField(
-            hintText: 'Title',
-          ),
-          SizedBox(
-            height: 18,
-          ),
-          CustomTextField(
-            maxLine: 5,
-            hintText: 'Content',
-          ),
-          SizedBox(
-            height: 90,
-          ),
-          CustomButton(),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: ListView(
+          children: [
+            SizedBox(
+              height: 18,
+            ),
+            CustomTextField(
+              hintText: 'Title',
+            ),
+            SizedBox(
+              height: 18,
+            ),
+            CustomTextField(
+              maxLine: 5,
+              hintText: 'Content',
+            ),
+            SizedBox(
+              height: 90,
+            ),
+            CustomButton(
+              buttonTitle: "Save Edit",
+            ),
+          ],
+        ),
       ),
     );
   }

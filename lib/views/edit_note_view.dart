@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/widgets/custom_button.dart';
+import 'package:notes_app/views/notes_view.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
 class EditNoteView extends StatelessWidget {
@@ -20,7 +20,12 @@ class EditNoteView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) {
+                    return NotesView();
+                  }));
+                },
                 icon: Icon(
                   Icons.done_outline_rounded,
                   size: 24,
@@ -47,9 +52,6 @@ class EditNoteView extends StatelessWidget {
             ),
             SizedBox(
               height: 90,
-            ),
-            CustomButton(
-              buttonTitle: "Save Edit",
             ),
           ],
         ),

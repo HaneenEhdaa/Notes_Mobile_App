@@ -15,7 +15,6 @@ class AddNoteBottomSheet extends StatefulWidget {
 }
 
 class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
-  bool isloading = false;
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -33,15 +32,13 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
             Navigator.pop(context);
           }
         }, builder: (context, state) {
-          if (state is AddNotesLoading) {
-            return const Center(
-                child: CircularProgressIndicator(color: Colors.amber));
-          } else {
-            return SizedBox(
+          return AbsorbPointer(
+            absorbing: state is AddNotesLoading ? true : false ,
+            child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.75,
               child: const AddNoteForm(),
-            );
-          }
+            ),
+          );
         }),
       ),
     );

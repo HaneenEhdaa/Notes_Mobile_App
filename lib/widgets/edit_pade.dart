@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/views/notes_view.dart';
+import 'package:notes_app/widgets/add_note_form.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
 class EditNotePage extends StatefulWidget {
@@ -14,6 +15,7 @@ class _EditNotePageState extends State<EditNotePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 14),
           child: Text(
@@ -46,48 +48,48 @@ class _EditNotePageState extends State<EditNotePage> {
   }
 }
 
-class AddNoteForm extends StatefulWidget {
-  const AddNoteForm({super.key});
+// class AddNoteForm extends StatefulWidget {
+//   const AddNoteForm({super.key});
 
-  @override
-  State<AddNoteForm> createState() => _AddNoteFormState();
-}
+//   @override
+//   State<AddNoteForm> createState() => _AddNoteFormState();
+// }
 
-class _AddNoteFormState extends State<AddNoteForm> {
-  final GlobalKey<FormState> formKey = GlobalKey();
-  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-  String? title, subTitle;
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      key: formKey,
-      autovalidateMode: autovalidateMode,
-      child: ListView(
-        children: [
-          SizedBox(
-            height: 18,
-          ),
-          CustomTextField(
-            onSaved: (value) {
-              title = value;
-            },
-            hintText: 'Title',
-          ),
-          SizedBox(
-            height: 18,
-          ),
-          CustomTextField(
-            onSaved: (value) {
-              subTitle = value;
-            },
-            maxLine: 5,
-            hintText: 'Content',
-          ),
-          SizedBox(
-            height: 90,
-          ),
-        ],
-      ),
-    );
-  }
-}
+// class _AddNoteFormState extends State<AddNoteForm> {
+//   final GlobalKey<FormState> formKey = GlobalKey();
+//   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+//   String? title, subTitle;
+//   @override
+//   Widget build(BuildContext context) {
+//     return Form(
+//       key: formKey,
+//       autovalidateMode: autovalidateMode,
+//       child: ListView(
+//         children: [
+//           SizedBox(
+//             height: 18,
+//           ),
+//           CustomTextField(
+//             onSaved: (value) {
+//               title = value;
+//             },
+//             hintText: 'Title',
+//           ),
+//           SizedBox(
+//             height: 18,
+//           ),
+//           CustomTextField(
+//             onSaved: (value) {
+//               subTitle = value;
+//             },
+//             maxLine: 5,
+//             hintText: 'Content',
+//           ),
+//           SizedBox(
+//             height: 90,
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }

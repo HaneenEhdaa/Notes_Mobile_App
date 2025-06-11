@@ -9,6 +9,7 @@ class NotesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.black,
           title: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 14),
             child: Text(
@@ -39,7 +40,7 @@ class NotesView extends StatelessWidget {
                   return AddNoteBottomSheet();
                 });
           },
-          backgroundColor: const Color.fromARGB(255, 199, 198, 196),
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           child: Icon(
             Icons.add,
             color: Colors.black,

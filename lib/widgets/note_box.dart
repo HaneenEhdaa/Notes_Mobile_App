@@ -8,7 +8,8 @@ class NoteBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) {
           return EditNoteView();
         }));
       },
@@ -16,7 +17,7 @@ class NoteBox extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6),
         child: Container(
           decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 255, 181, 206),
+              color: const Color.fromARGB(255, 255, 216, 236),
               borderRadius: BorderRadius.circular(20)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,

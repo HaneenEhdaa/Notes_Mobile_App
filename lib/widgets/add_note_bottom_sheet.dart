@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/add_nots_cubit/add_notes_cubit.dart';
 import 'package:notes_app/widgets/add_note_form.dart';
-import 'package:notes_app/widgets/custom_button.dart';
-import 'package:notes_app/widgets/custom_text_field.dart';
-import 'package:notes_app/widgets/edit_pade.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class AddNoteBottomSheet extends StatefulWidget {
   const AddNoteBottomSheet({super.key});
@@ -33,10 +29,14 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
           }
         }, builder: (context, state) {
           return AbsorbPointer(
-            absorbing: state is AddNotesLoading ? true : false ,
+            absorbing: state is AddNotesLoading ? true : false,
             child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.75,
-              child: const AddNoteForm(),
+              child: Padding(
+                padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom),
+                child: const AddNoteForm(),
+              ),
             ),
           );
         }),

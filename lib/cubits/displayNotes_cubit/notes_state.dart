@@ -9,7 +9,6 @@ class NotesLoaing extends NotesState {}
 
 class NotesSuccess extends NotesState {
   final List<NoteModel> notes;
-
   NotesSuccess({required this.notes});
 }
 
